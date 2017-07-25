@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { reducer as formReducer } from 'redux-form'
 
 const getInitialState = () => ({
   test:"123"
@@ -13,5 +14,6 @@ const a = (state = getInitialState(), action = {}) => {
 };
 
 export default combineReducers({
-  "a" : a
+  "a" : a,
+  "form": formReducer
 })

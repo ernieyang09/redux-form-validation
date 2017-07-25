@@ -5,7 +5,10 @@ import 'semantic-ui-css/semantic.min.css';
 class App extends Component {
   render() {
     return (
-      <Form />
+      <div style={{margin:'50px 0 0 50px'}}>
+        <Form />
+
+      </div>
     )
   }
 }
