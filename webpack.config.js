@@ -7,14 +7,19 @@ const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   inject: 'body'
 });
 
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 module.exports = {
+  devtool: 'source-map',
   entry: ['./src/index.js'],
   output:{
     path: path.resolve(__dirname,'dist'),
+    publicPath: '/',
     filename: 'bundle.js'
   },
   resolve:{
-    modules:['node_modules']
+    modules:['node_modules'],
+    extensions:['.js','.jsx']
   },
   module:{
     rules: [
@@ -22,6 +27,27 @@ module.exports = {
               loader:'babel-loader',
               test: /\.jsx?$/,
               include: path.resolve(__dirname, 'src')
+            },
+            {
+              loader: ExtractTextPlugin.extract({
+                fallback: 'style-loader',
+                use: 'css-loader'
+              }),
+              test: /\.css$/
+            },
+            {
+              test: [
+                /\.(png|jpe?g|gif|svg)$/i,
+                /\.(ttf|eot|svg|woff(2)?)(\?v=[0-9]\.[0-9]\.[0-9])?$/i,
+              ],
+              include: path.resolve(__dirname, 'node_modules'),
+              loader: {
+                loader: 'file-loader',
+                options: {
+                  context: 'node_modules/',
+                  name: 'lib/[path][name].[ext]',
+                },
+              },
             }
     ]
   },
@@ -31,6 +57,7 @@ module.exports = {
     inline:true
   },
   plugins: [
-    HTMLWebpackPluginConfig
+    HTMLWebpackPluginConfig,
+    new ExtractTextPlugin('assets/bundle.css')
   ]
 }
