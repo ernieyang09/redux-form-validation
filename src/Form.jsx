@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import { Input } from 'semantic-ui-react';
+import { Input, Button } from 'semantic-ui-react';
 import { Field, reduxForm } from 'redux-form'
+
+
+
+
 
 const TextInput = props => (
   <Input
@@ -17,6 +21,9 @@ const TextInput = props => (
 
 class Form extends Component {
 
+  handleClick = (e) => {
+    e.preventDefault();
+  }
 
 
   render() {
@@ -28,6 +35,7 @@ class Form extends Component {
         <br/>
         <Field name="key" component={TextInput} label="key"/>
         <br/>
+        <Button color="green" onClick={this.handleClick}>submit</Button>
       </form>
     )
   }
