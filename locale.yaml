@@ -1,0 +1,45 @@
+--- # locale
+
+en:
+  title: Login
+  domain: Domain
+  email: Email
+  password: Password
+  login: LOGIN
+  loading: Loading...
+  copyright: 2017 © ORing Industrial Corp. All Rights Reserved.
+  form_empty: Please input your domain, email and password.
+  domain_wrong_format: Please check your domain.
+  email_wrong_format: Please check your email.
+  password_wrong_format: Please check your password.
+  auth_fail: Login fail! Please check your information.
+
+zh-TW:
+  title: 登入
+  domain: 域名
+  email: 電郵
+  password: 密碼
+  login: 登入
+  loading: 讀取中⋯
+  copyright: 2017 © 威力工業網絡股份有限公司版權所有
+  form_empty: 請輸入您的域名、電郵及密碼。
+  domain_wrong_format: 請檢查您的域名。
+  email_wrong_format: 請檢查您的電郵。
+  password_wrong_format: 請檢查您的密碼。
+  auth_fail: 登入失敗！請檢查您的資訊。
+
+zh-CN:
+  title: 登录
+  domain: 域名
+  email: 电邮
+  password: 密码
+  login: 登录
+  loading: 读取中⋯
+  copyright: 2017 © 威力工业网络股份有限公司版权所有
+  form_empty: 请输入您的域名、电邮及密码。
+  domain_wrong_format: 请检查您的域名。
+  email_wrong_format: 请检查您的电邮。
+  password_wrong_format: 请检查您的密码。
+  auth_fail: 登录失败！请检查您的资讯。
+
+...
